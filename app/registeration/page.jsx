@@ -2,7 +2,7 @@
 import React, {useState} from 'react'
 import { MdOutlineProductionQuantityLimits } from "react-icons/md";
 import axios from 'axios';
-
+import Link from 'next/link';
 
 const RegisterationForm = () => {
   const defaults = {
@@ -76,7 +76,10 @@ const saveData =()=>{
                     <input type="reset" value="reset" className="p-1  bg-blue-900   text-white  hover:bg-blue-500 cursor-pointer text-sm rounded-sm px-2"/>
                       <input type="button" value="Add Product" className="p-1  bg-blue-900 ml-2 rounded-sm px-2 text-white  text-sm hover:bg-blue-500 cursor-pointer" 
                        onClick={()=>saveData()}/>
-                      
+                       <Link href="/dashboard/viewProducts">
+                       <input type="button" value="View Product" className="p-1  bg-blue-900 ml-2 rounded-sm px-2 text-white  text-sm hover:bg-blue-500 cursor-pointer" 
+                        />
+                      </Link>
                     </div>
                 </div>
                 </form>
