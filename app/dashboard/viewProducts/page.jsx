@@ -1,7 +1,8 @@
 "use client"
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
-
+import { MdDelete } from "react-icons/md";
+import { MdEdit } from "react-icons/md";
 const ViewProducts = () => {
 
   const [products, setProducts] = useState([])
@@ -30,6 +31,7 @@ useEffect(()=>{
             <div className='p-1 ml-2 w-2/12 '>Product Name</div>
             <div className='p-1 ml-2 w-2/12 '>Category</div>
             <div className='p-1 ml-2 w-1/12 '>Brand</div>
+            <div className='p-1 ml-2 w-1/12 '>Action</div>
         </div>
         {
         products &&
@@ -39,6 +41,7 @@ useEffect(()=>{
                 <div className='p-1 w-2/12 ml-2'>{item.name}</div>
                 <div className='p-1 w-2/12 ml-2'>{item.catagory}</div>
                 <div className='p-1 w-1/12 ml-2'>{item.brand}</div>
+                <div className='p-1 gap-2 ml-2 flex flex-row'><MdDelete color='red'/> <MdEdit /></div>
             </div>
         ))}
 
